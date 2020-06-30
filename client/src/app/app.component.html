@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i class="fas fa-dollar-sign"></i> Corretora de Investimentos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/" routerLinkActive="active">Início</a>
+      </li>
+      <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+        <a class="nav-link" routerLink="login" routerLinkActive="active">Entrar</a>
+      </li>
+      <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+        <a class="nav-link" routerLink="register" routerLinkActive="active">Registrar</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" routerLink="profile" routerLinkActive="active">{{ auth.getUserDetails()?.first_name }}</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" routerLink="profile/carteira" routerLinkActive="active">Minha Carteira</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" routerLink="profile/homebroker" routerLinkActive="active">Investir</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" (click)="auth.logout()" routerLink="" routerLinkActive="active">Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

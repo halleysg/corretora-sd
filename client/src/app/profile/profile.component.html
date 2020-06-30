@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="jumbotron mt-5 ">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Perfil</h1>
+      </div>
+      <button class="btn btn-primary" (click)="updateType('Moderado')">Mudar Perfil Investidor</button>
+      <table class="table col-md-6 mx-auto">
+        <tr>
+          <td>Nome</td>
+          <td>{{ details?.first_name }}</td>
+        </tr>
+        <tr>
+          <td>Sobrenome</td>
+          <td>{{ details?.last_name }}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{ details?.email }}</td>
+        </tr>
+        <tr>
+          <td>Perfil de Investidor</td>
+          <td>{{ details?.type }}</td>
+        </tr>
+      </table>
+      <button routerLink="carteira"> Carteira </button>
+      <button routerLink="homebroker"> Investir </button>
+    </div>
+    
+  </div>

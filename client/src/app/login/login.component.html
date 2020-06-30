@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Entrar</h3>
+            <form (submit)="login()"> 
+                <div class="form-group">
+                  <label for="email">Endereço de Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Digite seu Email" [(ngModel)]="credentials.email">                  
+                </div>
+                <div class="form-group">
+                  <label for="loginPassword">Senha</label>
+                  <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" [(ngModel)]="credentials.password">
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </form>
+    </div>
+</div>
