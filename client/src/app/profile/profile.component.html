@@ -3,9 +3,15 @@
     <div class="col-sm-8 mx-auto">
       <h1 class="text-center">Perfil</h1>
     </div>
-    <button class="btn btn-primary" (click)="updateC()">Conservador</button>
-    <button class="btn btn-primary" (click)="updateM()">Moderado</button>
-    <button class="btn btn-primary" (click)="updateA()">Arrojado</button>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdJ_FevMbNmKui305uDLxT6PhuwQfvUOiONAHyvrLLGE8AGw/viewform"
+       class="btn btn-primary" target="_blank" *ngIf="!details?.anal">
+       Realizar Teste
+    </a>
+    <div>
+      <button *ngIf="!details?.anal" class="btn btn-primary" (click)="updateA()" > Arrojado </button>
+      <button *ngIf="!details?.anal" class="btn btn-primary" (click)="updateM()" > Moderado </button>
+      <button *ngIf="!details?.anal" class="btn btn-primary" (click)="updateC()" > Conservador </button>
+    </div>
     <table class="table col-md-6 mx-auto">
       <tr>
         <td>Nome</td>
@@ -24,8 +30,8 @@
         <td>{{ details?.type }}</td>
       </tr>
     </table>
-    <button routerLink="carteira"> Carteira </button>
-    <button routerLink="homebroker"> Investir </button>
+    <button class="btn btn-primary" routerLink="carteira"> Carteira </button>
+    <button class="btn btn-primary" routerLink="homebroker"> Investir </button>
   </div>
 
 </div>

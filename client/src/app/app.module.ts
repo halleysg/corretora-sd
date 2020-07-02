@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'profile/updateC', component: UpdateCComponent, canActivate: [AuthGuardService]},
   { path: 'profile/updateM', component: UpdateMComponent, canActivate: [AuthGuardService]},
   { path: 'profile/updateA', component: UpdateAComponent, canActivate: [AuthGuardService]},
-  { path: 'profile/analista', component: AnalistaComponent}
+  { path: 'profile/analista', component: AnalistaComponent, canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

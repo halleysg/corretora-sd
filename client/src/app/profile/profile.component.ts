@@ -11,12 +11,11 @@ export class ProfileComponent implements OnInit {
   details: UserDetails
 
   constructor(private auth: AuthService, private router: Router) { }
-
+  
   ngOnInit(): void {
     this.auth.profile().subscribe(
       user => {
         this.details = user
-        this.router.navigateByUrl("/profile");
       },
       err => {
         console.error(err)
@@ -28,6 +27,7 @@ export class ProfileComponent implements OnInit {
     this.auth.updateC().subscribe(
      user => {
         this.details = user
+        this.router.navigateByUrl("/profile");
       },
       err => {
         console.error(err)
@@ -39,6 +39,7 @@ export class ProfileComponent implements OnInit {
     this.auth.updateM().subscribe(
      user => {
         this.details = user
+        this.router.navigateByUrl("/profile");
       },
       err => {
         console.error(err)
@@ -50,6 +51,7 @@ export class ProfileComponent implements OnInit {
     this.auth.updateA().subscribe(
      user => {
         this.details = user
+        this.router.navigateByUrl("/profile");
       },
       err => {
         console.error(err)

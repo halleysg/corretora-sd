@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h1 class="text-center"> Homebroker </h1>
-    <h3 class="text-center"> Recomendados </h3>
-    <table class="table table-hover">
+    <h3 *ngIf="!details?.anal" class="text-center"> Recomendados </h3>
+    <table *ngIf="!details?.anal" class="table table-hover">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Nome</th>
@@ -35,8 +35,8 @@
             <td *ngIf="i.type !== details.type"> {{i.name}} </td>
             <td *ngIf="i.type !== details.type"> {{i.price}} R$</td>
             <td *ngIf="i.type !== details.type"> {{i.leg}} </td>
-            <button *ngIf="i.type == details.type&&!details.anal" class="btn btn-primary">Comprar</button>
-            <button *ngIf="i.type == details.type&&details.anal" class="btn btn-primary">Indicar</button>
+            <button *ngIf="i.type !== details.type&&!details.anal" class="btn btn-primary">Comprar</button>
+            <button *ngIf="i.type !== details.type&&details.anal" class="btn btn-primary">Indicar</button>
           </tr>
         </tbody>
       </table>
