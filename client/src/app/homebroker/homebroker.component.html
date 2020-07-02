@@ -15,7 +15,8 @@
             <td *ngIf="i.type == details.type">{{i.name}}</td>
             <td *ngIf="i.type == details.type">{{i.price}}R$</td>
             <td *ngIf="i.type == details.type"> {{i.leg}} </td>
-            <button *ngIf="i.type == details.type" class="btn btn-primary">Comprar</button>
+            <button *ngIf="i.type == details.type&&!details.anal" class="btn btn-primary">Comprar</button>
+            <button *ngIf="i.type == details.type&&details.anal" class="btn btn-primary">Indicar</button>
           </tr>
         </tbody>
       </table>
@@ -34,7 +35,8 @@
             <td *ngIf="i.type !== details.type"> {{i.name}} </td>
             <td *ngIf="i.type !== details.type"> {{i.price}} R$</td>
             <td *ngIf="i.type !== details.type"> {{i.leg}} </td>
-            <button class="btn btn-primary" *ngIf="i.type !== details.type">Comprar</button>
+            <button *ngIf="i.type == details.type&&!details.anal" class="btn btn-primary">Comprar</button>
+            <button *ngIf="i.type == details.type&&details.anal" class="btn btn-primary">Indicar</button>
           </tr>
         </tbody>
       </table>

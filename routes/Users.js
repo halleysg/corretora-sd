@@ -164,6 +164,18 @@ users.post('/profile/analista', (req, res) => {
     type: req.body.type,  
   }
 
+  if(!req.body.type){
+    if(req.body.leg=="Ação"){
+      invData.type="Arrojado"
+    }
+    if(req.body.leg=="FII"){
+      invData.type="Moderado"
+    }
+    if(req.body.leg=="Renda Fixa"){
+      invData.type="Conservador"
+    }
+  }
+
   Inv.findOne({
     where: {
       name: req.body.name

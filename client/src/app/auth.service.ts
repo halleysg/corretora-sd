@@ -12,6 +12,8 @@ export interface UserDetails {
   email: string
   type: string
   password: string
+  carteira: number[]
+  anal: boolean
   exp: number
   iat: number
 }
@@ -28,6 +30,8 @@ export interface TokenPayload {
   type: string
   email: string
   password: string
+  carteira: number[]
+  anal: boolean
 }
 
 @Injectable()
@@ -64,6 +68,15 @@ export class AuthService {
     const user = this.getUserDetails()
     if (user) {
       return user.exp > Date.now() / 1000
+    } else {
+      return false
+    }
+  }
+
+  public isAnalyst(): boolean {
+    const user = this.getUserDetails()
+    if (user) {
+      return user.anal
     } else {
       return false
     }

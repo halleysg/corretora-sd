@@ -13,7 +13,7 @@ module.exports = db.sequelize.define(
       type: Sequelize.STRING
     },
     price: {
-      type: Sequelize.INTEGER
+      type: Sequelize.FLOAT
     },
     leg: {
         type: Sequelize.STRING

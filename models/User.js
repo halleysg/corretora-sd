@@ -16,16 +16,22 @@ module.exports = db.sequelize.define(
       type: Sequelize.STRING
     },
     address: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     type: {
       type: Sequelize.STRING
-  },
+    },
     email: {
       type: Sequelize.STRING
     },
     password: {
       type: Sequelize.STRING
+    },
+    carteira: {
+      type: Sequelize.INTEGER
+    },
+    anal: {
+      type: Sequelize.BOOLEAN
     },
     created: {
       type: Sequelize.DATE,

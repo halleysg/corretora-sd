@@ -18,17 +18,17 @@
       <li class="nav-item" *ngIf="auth.isLoggedIn()">
         <a class="nav-link" routerLink="profile" routerLinkActive="active">{{ auth.getUserDetails()?.first_name }}</a>
       </li>
-      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+      <li class="nav-item" *ngIf="auth.isLoggedIn()&&!auth.isAnalyst()">
         <a class="nav-link" routerLink="profile/carteira" routerLinkActive="active">Minha Carteira</a>
       </li>
       <li class="nav-item" *ngIf="auth.isLoggedIn()">
         <a class="nav-link" routerLink="profile/homebroker" routerLinkActive="active">Investir</a>
       </li>
+      <li class="nav-item" *ngIf="auth.isAnalyst()">
+        <a class="nav-link" routerLink="profile/analista" routerLinkActive="active">Indicar Investimento</a>
+      </li>
       <li class="nav-item" *ngIf="auth.isLoggedIn()">
         <a class="nav-link" (click)="auth.logout()" routerLink="" routerLinkActive="active">Sair</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="profile/analista" routerLinkActive="active">Indicar Investimento</a>
       </li>
     </ul>
   </div>
