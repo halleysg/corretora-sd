@@ -12,7 +12,7 @@ export class InvService {
         return this.http.post(`/users/profile/analista`, user)
     }   
 
-    public profile(): Observable<any> {
-        return this.http.get(`/users/profile`, )
+    public listInvs(): Observable<any> {
+        return this.http.get(`/users/profile/homebroker`, )
     }
 }

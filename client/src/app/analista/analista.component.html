@@ -8,17 +8,37 @@
             </div>
             <div class="form-group">
                 <label>Tipo</label>
-                <input type="text" name="leg" class="form-control" [(ngModel)]="inv.leg">
+                <select class="form-control" name="leg" [(ngModel)]="inv.leg">
+                    <option>Ação</option>
+                    <option>FII</option>
+                    <option>Renda Fixa</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Preço</label>
                 <input type="number" name="price" class="form-control" [(ngModel)]="inv.price">
             </div>
+            <div class="form-group">
+                <label>Indicar Para</label>
+                <select class="form-control" name="type" id="tp" [(ngModel)]="inv.type">
+                    <option>Conservador</option>
+                    <option>Moderado</option>
+                    <option>Arrojado</option>
+                </select>
+            </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="cb">
                 <label class="form-check-label">Indicar Automaticamente</label>
             </div>
             <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>
     </div>
 </div>
+
+<script>
+    $(function () {
+        $('#cb').on('click', function () {
+            $('#tp').attr('disabled', $(this).is(':checked'));
+        });
+    });
+</script>

@@ -28,23 +28,10 @@ export class AnalistaComponent implements OnInit {
     this.auth.register(this.inv).subscribe(
       () => {
         this.router.navigateByUrl("/profile/analista");
-        this.genType();
       },
       err => {
         console.error(err);
       }
     );
-  }
-
-  genType(){
-    if(this.inv.leg=="Ação"){
-      this.inv.type = "Arrojado";
-    }
-    if(this.inv.leg=="FII"){
-      this.inv.type = "Moderado";
-    }
-    if(this.inv.leg=="Renda Fixa"){
-      this.inv.type = "Conservador";  
-    }
   }
 }

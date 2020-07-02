@@ -161,6 +161,7 @@ users.post('/profile/analista', (req, res) => {
     name: req.body.name,
     price: req.body.price,
     leg: req.body.leg,
+    type: req.body.type,  
   }
 
   Inv.findOne({
@@ -168,7 +169,6 @@ users.post('/profile/analista', (req, res) => {
       name: req.body.name
     }
   })
-    //TODO bcrypt
     .then(inv => {
       if (!inv) {
         Inv.create(invData)

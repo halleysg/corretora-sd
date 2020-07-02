@@ -11,11 +11,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of dispInvestments">
-            <td *ngIf="i.leg === details?.type">{{i.name}}</td>
-            <td *ngIf="i.leg === details?.type">{{i.price}}R$</td>
-            <td *ngIf="i.leg === details?.type">{{i.type}}</td>
-            <button *ngIf="i.leg === details?.type" class="btn btn-primary">Comprar</button>
+          <tr *ngFor="let i of invs">
+            <td *ngIf="i.type == details.type">{{i.name}}</td>
+            <td *ngIf="i.type == details.type">{{i.price}}R$</td>
+            <td *ngIf="i.type == details.type"> {{i.leg}} </td>
+            <button *ngIf="i.type == details.type" class="btn btn-primary">Comprar</button>
           </tr>
         </tbody>
       </table>
@@ -30,11 +30,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of dispInvestments">
-            <td *ngIf="i.leg !== details?.type">{{i.name}}</td>
-            <td *ngIf="i.leg !== details?.type">{{i.price}}R$</td>
-            <td *ngIf="i.leg !== details?.type">{{i.type}}</td>
-            <button *ngIf="i.leg !== details?.type" class="btn btn-primary">Comprar</button>
+          <tr *ngFor="let i of invs">
+            <td *ngIf="i.type !== details.type"> {{i.name}} </td>
+            <td *ngIf="i.type !== details.type"> {{i.price}} R$</td>
+            <td *ngIf="i.type !== details.type"> {{i.leg}} </td>
+            <button class="btn btn-primary" *ngIf="i.type !== details.type">Comprar</button>
           </tr>
         </tbody>
       </table>
