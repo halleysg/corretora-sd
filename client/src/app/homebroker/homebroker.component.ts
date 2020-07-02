@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Investment } from '../investment';
-import { ProfileComponent } from '../profile/profile.component';
 import { AuthService, UserDetails } from '../auth.service';
 
 
@@ -19,24 +18,30 @@ export class HomebrokerComponent implements OnInit {
     this.auth.profile().subscribe(
       user => {
         this.details = user
-        this.details.type = "Moderado"
       },
       err => {
         console.error(err)
       }
-    )  
+    )
   }
 
   dispInvestments = [
-    new Investment(1, 'Petrobras', '20,50', 'Arrojado', 'Ação'),
-    new Investment(2, 'HGLG', '10,12', 'Moderado', 'FII'),
-    new Investment(3, 'Selic', '100,00', 'Conservador', 'Renda Fixa'),
-    new Investment(4, 'KNRI', '20,20', 'Moderado', 'FII'),
+    new Investment(1, 'Petrobras', '20,50', 'Arrojado', 'Ação', 0),
+    new Investment(2, 'HGLG', '10,12', 'Moderado', 'FII', 0),
+    new Investment(3, 'Selic', '100,00', 'Conservador', 'Renda Fixa', 0),
+    new Investment(4, 'KNRI', '20,20', 'Moderado', 'FII', 0),
   ];
-  insvestmentModel = new Investment(1, '', '', '', '');
+  insvestmentModel = new Investment(1, '', '', '', '', 0);
 
-  add(){
-    this.dispInvestments.push(new Investment(this.insvestmentModel.id,this.insvestmentModel.name, this.insvestmentModel.price, this.insvestmentModel.leg,this.insvestmentModel.type));
+  add() {
+    this.dispInvestments.push(new Investment(
+      this.insvestmentModel.id,
+      this.insvestmentModel.name,
+      this.insvestmentModel.price,
+      this.insvestmentModel.leg,
+      this.insvestmentModel.type,
+      this.insvestmentModel.quant
+    ));
   }
 
 }

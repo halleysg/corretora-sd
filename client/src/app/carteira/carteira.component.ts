@@ -15,6 +15,6 @@ export class CarteiraComponent implements OnInit {
   }
 
   carteira = [];
-  insvestmentModel = new Investment(1, '', '', '','');
+  insvestmentModel = new Investment(1, '', '', '','',0);
 
 }

@@ -13,6 +13,11 @@ import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { CarteiraComponent } from './carteira/carteira.component';
 import { HomebrokerComponent } from './homebroker/homebroker.component';
+import { UpdateCComponent } from './update/updateC.component';
+import { UpdateMComponent } from './update/updateM.component ';
+import { UpdateAComponent } from './update/updateA.component';
+import { AnalistaComponent } from './analista/analista.component';
+import { InvService } from './inv.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -21,6 +26,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   { path: 'profile/carteira', component: CarteiraComponent, canActivate: [AuthGuardService]},
   { path: 'profile/homebroker', component: HomebrokerComponent, canActivate: [AuthGuardService]},
+  { path: 'profile/updateC', component: UpdateCComponent, canActivate: [AuthGuardService]},
+  { path: 'profile/updateM', component: UpdateMComponent, canActivate: [AuthGuardService]},
+  { path: 'profile/updateA', component: UpdateAComponent, canActivate: [AuthGuardService]},
+  { path: 'profile/analista', component: AnalistaComponent}
 ];
 
 @NgModule({
@@ -31,7 +40,11 @@ const routes: Routes = [
     ProfileComponent,
     LoginComponent,
     CarteiraComponent,
-    HomebrokerComponent
+    HomebrokerComponent,
+    UpdateCComponent,
+    UpdateMComponent,
+    UpdateAComponent,
+    AnalistaComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService, AuthService, InvService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,6 +27,9 @@
       <li class="nav-item" *ngIf="auth.isLoggedIn()">
         <a class="nav-link" (click)="auth.logout()" routerLink="" routerLinkActive="active">Sair</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="profile/analista" routerLinkActive="active">Indicar Investimento</a>
+      </li>
     </ul>
   </div>
 </nav>

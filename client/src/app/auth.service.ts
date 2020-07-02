@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Router } from '@angular/router'
-import { CarteiraComponent } from './carteira/carteira.component'
 
 export interface UserDetails {
   id: number
@@ -15,7 +14,6 @@ export interface UserDetails {
   password: string
   exp: number
   iat: number
-  carteira: CarteiraComponent
 }
 
 interface TokenResponse {
@@ -27,6 +25,7 @@ export interface TokenPayload {
   first_name: string
   last_name: string
   address: string
+  type: string
   email: string
   password: string
 }
@@ -91,6 +90,24 @@ export class AuthService {
 
   public profile(): Observable<any> {
     return this.http.get(`/users/profile`, {
+      headers: { Authorization: ` ${this.getToken()}` }
+    })
+  }
+
+  public updateC(): Observable<any> {
+    return this.http.get(`/users/profile/updateC`, {
+      headers: { Authorization: ` ${this.getToken()}` }
+    })
+  }
+
+  public updateM(): Observable<any> {
+    return this.http.get(`/users/profile/updateM`, {
+      headers: { Authorization: ` ${this.getToken()}` }
+    })
+  }
+
+  public updateA(): Observable<any> {
+    return this.http.get(`/users/profile/updateA`, {
       headers: { Authorization: ` ${this.getToken()}` }
     })
   }

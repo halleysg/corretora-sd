@@ -5,5 +5,6 @@ export class Investment {
         public price: string,
         public leg: string,
         public type: string,
+        public quant: number,
     ){}
 }
